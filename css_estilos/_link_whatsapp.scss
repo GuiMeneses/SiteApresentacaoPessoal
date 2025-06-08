@@ -1,0 +1,18 @@
+@use "mixins" as mx;
+
+.link_whatsapp{
+    
+    --img_size:75px;
+    position: fixed;
+    bottom: 0px;
+    right: 5px;
+    margin: 0 10px 10px 0;
+    z-index: 5;
+    
+
+    img{
+        border-radius: 100%;
+        width: var(--img_size);
+        box-shadow: 10px 10px 20px rgba(228, 0, 0, 0.37);
+    }
+}

@@ -1,0 +1,243 @@
+// Estrutura dos contents
+@mixin content(
+
+    //Pading
+    $pd_l: 10px, $pd_r: 10px, $pd_t: 100px, $pd_b: 100px, 
+    //Margin
+    $marg_l: 2vh, $marg_r: 2vh,  
+    //Img size
+    $img_size: 400px,
+    //Img margin
+    $img_marg_l: 2vh, $img_marg_r: 2vh, $img_marg_t: 2vh, $img_marg_b: 2vh,
+    //Img img_float
+    $img_float: right,
+    //Img color_shadow
+    $color_shadow: rgba(95, 4, 4, 0.5),
+    //Font size
+    $font_size: 25px,
+    //hn hn_aling, hn_size, hn_margin
+    $hn_aling: center, $hn_size: 50px, $hn_margin: 10px,
+    //h3 hn_aling, h3_size, h3_margin
+    $h3_aling: left, $h3_size: 40px, $h3_margin_t: 30px, $h3_margin_r: 0px, $h3_margin_b: 0px,$h3_margin_l: 40px,
+
+
+    ){
+
+    text-align: center;
+
+    padding: $pd_t $pd_r $pd_b $pd_l;
+    overflow: auto;
+    margin-left: $marg_l;
+    margin-right: $marg_r;
+
+    img{
+        float: $img_float;
+        width: $img_size;
+        margin: $img_marg_t $img_marg_r $img_marg_b $img_marg_l;
+        border-radius: 0px;
+        box-shadow: 10px 10px 20px $color_shadow;
+    }
+
+    .hn_{
+        text-align: $hn_aling;
+        font-size: $hn_size;
+        margin: $hn_margin;
+    }
+
+    h3{
+        text-align: $h3_aling;
+        font-size: $h3_size;
+        margin-top: $h3_margin_t;
+        margin-right: $h3_margin_r;
+        margin-bottom: $h3_margin_b;
+        margin-left: $h3_margin_l;
+    }
+
+    p{
+        font-size: $font_size;
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    ul {
+        font-size: $font_size;
+        text-align: justify;
+        hyphens: auto;
+        list-style-type: disc;
+        padding-left: 4rem;
+        margin-bottom: 1rem; 
+      
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    a {
+        color: #0059ff;
+        text-decoration: none;
+    }
+      
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    } 
+}
+
+
+// Icon ajustavel
+@mixin icon_ajustavel(
+    //Necessário por em um tipo "a"(link)
+    //Img arquivo .png
+    $arquivo_png: url('../imgs/error.png'),
+    //Tamnho do icone
+    $tamanho_icon: 100px,
+    //Cor do icone
+    $cor_icon: #ffd000,
+    //Cor do icon em hover
+    $cor_icon_hover: #e2c337,
+    //Margin icon
+    $icon_margin: 0px,
+
+){
+    text-decoration: none;
+    margin: $icon_margin;
+    img {
+        -webkit-mask-image: $arquivo_png;
+        mask-image: $arquivo_png;
+        background-color: $cor_icon;
+        width: $tamanho_icon;
+        height: $tamanho_icon;
+        mask-size: $tamanho_icon;
+    }
+
+    &:hover{
+        img{
+            background-color: $cor_icon_hover;
+        }
+    }   
+}
+
+
+@mixin img_bg_fix(){
+    position: fixed;
+    top: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -5;
+}
+
+@mixin bt_ajustavel(
+
+    //Atributos Botão
+    $bt_font_size: 20px,
+    $bt_display: inline, 
+    $bt_text_color: #3b3b3b, 
+    $bt_espessura_borda: 2px,
+    $bt_cor_borda: rgba(0, 0, 0, 0), 
+    $bt_tipo_borda: solid,
+    $bt_cor_bg: #ff8d47,
+
+    //Atributos Botão Hover
+    $bt_font_size_hover: 20px,
+    $bt_text_color_hover: #000000, 
+    $bt_espessura_borda_hover: 2px,
+    $bt_cor_borda_hover: rgb(0, 0, 0), 
+    $bt_tipo_borda_hover: solid,
+    $bt_cor_bg_hover: #ff8337,
+
+    //Atributos Gerais
+    $bt_margin: 10px,
+    $bt_border_radius: 20px,
+    $bt_padding_left: 14px,
+    $bt_padding_right: 10px,
+    $bt_padding_top: 1px,
+    $bt_padding_bottom: 2px,
+    $bt_text_decoration: none,
+    
+    ){
+
+
+    //Atributos Botão normal
+    font-size: $bt_font_size;
+    display: $bt_display;
+    color: $bt_text_color;
+    border: $bt_espessura_borda $bt_cor_borda $bt_tipo_borda;
+    background-color: $bt_cor_bg;
+
+    //Atributos Gerais
+    margin: $bt_margin;
+    border-radius: $bt_border_radius;
+    padding-left: $bt_padding_left;
+    padding-right: $bt_padding_right;
+    padding-top: $bt_padding_top;
+    padding-bottom: $bt_padding_bottom;
+    text-decoration: $bt_text_decoration;
+
+    &:hover{
+        font-size:  $bt_font_size_hover;
+        color: $bt_text_color_hover;
+        border: $bt_espessura_borda_hover $bt_cor_borda_hover $bt_tipo_borda_hover;
+        background-color: $bt_cor_bg_hover;
+    }
+}
+
+@mixin menu_ajustavel(
+    $menu_size: 50px,
+    $menu_border_radius:20%,
+    $menu_bg_color: rgb(66, 45, 45),
+    $menu_line_height: 5px,
+    $menu_line_width: 80%,
+    $menu_line_color: rgb(75, 100, 100),
+    $menu_line_border_radius: 10px,
+    $menu_line_space: 8px,
+    ){
+
+    height: $menu_size;
+    width: $menu_size;
+    border: none;
+    border-radius: $menu_border_radius;
+    background-color: $menu_bg_color;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+        
+    div{
+        height: $menu_line_height;
+        width: $menu_line_width;
+        background-color: $menu_line_color;
+        border-radius: $menu_line_border_radius;
+        position: absolute;
+    }
+
+    .div_line1{
+        top: $menu_line_space;
+        transition: opacity 0.25s ease-in-out;
+        
+    }
+
+    .div_line2{
+        opacity: 0%;
+        align-self: center;
+        transition: transform, opacity, 0.5s ease-in-out;
+    }
+    .div_line3{
+        align-self: center;
+        transition: transform, opacity, 0.5s ease-in-out;
+
+    }
+    .div_line4{
+        bottom: $menu_line_space;
+        transition: opacity 0.25s ease-in-out;
+    }
+}
+
+@mixin gradiente_ajustavel($primeiro_ponto, $segundo_ponto, $terceiro_ponto,){
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 1) $primeiro_ponto,  
+        rgba(0, 0, 0, 0.5) $segundo_ponto,  
+        rgba(0, 0, 0, 0) $terceiro_ponto,
+    );
+}

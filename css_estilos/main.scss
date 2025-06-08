@@ -1,0 +1,95 @@
+@use "mixins" as mx;
+
+@import './content1.scss';
+@import './header';
+@import './footer';
+@import './link_whatsapp';
+
+// Trocar cores
+    // ---------- Header ----------
+        // Botoes links
+            .links_redes{
+                //Atributos Botão
+                --bt_text_color: #050f16;
+                --bt_cor_borda: rgba(0, 0, 0, 0);
+                --bt_cor_bg: #6eb2ff;
+
+                //Atributos Botão Hover
+                --bt_text_color_hover: #000000;
+                --bt_cor_borda_hover: rgb(0, 0, 0);
+                --bt_cor_bg_hover: #6ba5e7;
+            }
+        // Botoes linksfim fim
+
+        // Texto pg_titulo
+            #pg_titulo{
+                color: #050f16;
+            }
+        // Texto pg_titulo fim
+
+        // Botão menu
+            .button_menu{
+                --button_menu_bg_color: #0f1a29;
+                --button_menu_line_color: #61a1cb;
+            }
+
+            .div_menu{
+                visibility: hidden;
+                a{
+                    color: #0f1a29;
+                }
+                .div_redes_menu{
+                    --cor_icon_hover: rgb(0, 0, 0);
+                    --cor_icon: #0f1a29;
+                }
+            }
+
+            .div_bg_menu{
+                visibility: hidden;
+                background-color: #61a1cbe5;
+            }
+        // Botão menu fim
+        // Bgcolor da imagem de fundo
+            #img_bg{
+                background-color: #a2b8c9;
+            }
+        // Bgcolor da imagem de fundo fim
+
+    // ---------- Header Fim ----------
+
+    //  ---------- Content ----------
+        main{
+            background-color: #99b4e5;
+        }
+
+        .content1{
+            img{
+                box-shadow: none;
+            }
+        }
+    //  ---------- Content Fim ----------
+
+    // ---------- Footer ----------
+    footer{
+        // Cores principais
+            --cor_texto:rgb(147, 186, 218);
+            --cor_bg: #275390;
+        // Cores principais fim
+
+        // Icons redes
+            --icon_redes_cor: rgb(147, 186, 218);
+            --icon_redes_cor_hover: rgb(127, 168, 202);
+        // Icons redes fim
+    }
+    // ---------- Footer Fim ----------
+// Trocar cores fim
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    margin: 0;
+}

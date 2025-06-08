@@ -1,0 +1,212 @@
+@use "mixins" as mx;
+
+main{
+    background-color: rgb(201, 178, 178);
+}
+
+.content1{
+    // --just_items: none;
+    --hn_size: 10px;
+    --hn_margin: 10px;
+    --img_size: 100px;
+    --img_float: none;
+    --p_size: 10px;
+    --margin_size_l:10px;
+    --margin_size_r:10px;
+    --img_marg_l: 0;
+    --img_marg_r: 0;
+    --img_marg_t: 0;
+    --img_marg_b: 0;
+
+    --color_shadow: rgba(95, 4, 4, 0.5);
+
+    @include mx.content(
+        // $just_items: var(--just_items),
+        $hn_size: var(--hn_size),
+        $hn_margin: var(--hn_margin),
+        $img_size: var(--img_size),
+        $img_float: var(--img_float),
+        $font_size: var(--p_size),
+        $marg_l: var(--margin_size_l),
+        $marg_r: var(--margin_size_r),
+        $img_marg_l: var(--img_marg_l),
+        $img_marg_r: var(--img_marg_r),
+        $img_marg_t: var(--img_marg_t),
+        $img_marg_b: var(--img_marg_b),
+        $color_shadow: var(--color_shadow),
+    );
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 10%;
+    
+    button{
+        border: 2px solid rgb(38, 49, 78);
+        background-color: rgba(223, 214, 255, 0.514);
+        border-radius: 10px;
+        height: 30px;
+        width: 20%;
+        align-self: flex-end;
+        font-size: 20px;
+        min-width: 90px;
+    }
+
+    button:hover{
+        background-color: rgba(223, 214, 255, 0.281);
+        cursor: pointer;
+    }
+}
+
+label{
+    font-size: var(--p_size);
+    color: rgb(38, 49, 78);
+    align-self: flex-start;
+}
+input{
+    width: 100%;
+    border-radius: 10px;
+    height: var(--p_size);
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(38, 49, 78);
+    background-color: #BDC6F2;
+    outline: none;
+    font-size: 18px;
+
+    
+}
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #BDC6F2 inset;
+}
+
+
+textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid rgb(38, 49, 78);
+    background-color: rgba(223, 214, 255, 0.514);
+    outline: none;
+    font-size: 18px;
+    resize: none;
+}
+
+// Media Queries
+@media only screen and (max-width: 300px) {
+    .content1{
+        --hn_size: 35px;
+        --img_size: 50%;
+        --p_size: 25px;
+        --margin_size_l: 10px;   
+        --margin_size_r: 10px;   
+    }
+    form{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .content1{
+        --hn_size: 35px;
+        --img_size: 50%;
+        --p_size: 25px;
+        --margin_size_l: 10px;   
+        --margin_size_r: 10px;   
+    }
+    form{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .content1{
+        --hn_size: 50px;
+        --img_size: 50%;
+        --p_size: 30px;
+        --margin_size_l: 10px;   
+        --margin_size_r: 10px;    
+    }
+
+    form{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .content1{
+        --hn_size: 70px;
+        --img_size: 40%;
+        --img_float: right;
+        --p_size: 30px;
+        --margin_size_l: 10px;   
+        --margin_size_r: 10px;      
+    }
+
+    form{
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content1{
+        --hn_size: 70px;
+        --img_size: 40%;
+        // --img_float: right;
+        --p_size: 30px;
+        --margin_size_l: 30px;   
+        --margin_size_r: 30px;     
+    }
+
+    form{
+        width: 40%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .content1{
+        --hn_size: 80px;
+        --img_size: 30%;
+        --p_size: 30px;
+        --margin_size_l: 50px;   
+        --margin_size_r: 50px;    
+    }
+
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .content1{
+        --hn_size: 70px;
+        --hn_margin: 40px;
+        --img_size: 30%;
+        --p_size: 30px;
+        --margin_size_l: 10vh;   
+        --margin_size_r: 10vh;
+        --img_marg_l: 2vh; 
+    }
+
+    
+}
+
+@media only screen and (min-width: 2560px) {
+    .content1{
+        --hn_size: 80px;
+        --hn_margin: 40px;
+        --img_size: 30%;
+        --p_size: 40px;
+        --margin_size_l: 10vh;   
+        --margin_size_r: 10vh;
+        --img_marg_l: 5vh;
+    }
+}
+
+
+

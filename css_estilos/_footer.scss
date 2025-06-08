@@ -1,0 +1,140 @@
+@use "mixins" as mx;
+
+footer{
+    // Cores principais
+        --cor_texto:rgb(248, 200, 181);
+        --cor_bg: #c91801;
+    // Cores principais fim
+    
+    // Icons redes
+        --icon_redes_cor: rgb(206, 174, 161);
+        --icon_redes_cor_hover: rgb(204, 153, 111);
+    // Icons redes fim
+    
+
+    --tamanho_texto: 20px;
+    --tamanho_h3: 30px;
+    justify-items: center;
+    background-color: var(--cor_bg);
+    padding: 10px 10px 10px 10px;
+
+    .footer_info_empresa{
+        justify-items: center;
+        color: var(--cor_texto);
+        p{
+            margin: 5px;
+        }
+    }
+
+    .footer_redes{
+        display: flex;
+        --cor_icon: var(--icon_redes_cor);
+        --cor_icon_hover: var(--icon_redes_cor_hover);
+        --tamanho_icon: 40px;
+        --icon_margin: 10px;
+        
+
+        #footer_linkedin{
+            @include mx.icon_ajustavel(
+                //Img arquivo .png
+                url('../imgs/linkedin_preto.png'),
+                //Tamnho do icone
+                var(--tamanho_icon),
+                //Cor do icone
+                var(--cor_icon),
+                //Cor do icon em hover
+                var(--cor_icon_hover),
+                //Margin icon
+                var(--icon_margin),
+                
+            );
+        }
+
+        #footer_github{
+            @include mx.icon_ajustavel(
+                //Img arquivo .png
+                url('../imgs/github.png'),
+                //Tamnho do icone
+                var(--tamanho_icon),
+                //Cor do icone
+                var(--cor_icon),
+                //Cor do icon em hover
+                var(--cor_icon_hover),
+                //Margin icon
+                var(--icon_margin),
+                
+            );
+        }
+    }
+    
+    h4{
+        font-size: var(--tamanho_h3);
+    }
+
+    p{
+        color: var(--cor_texto);
+        font-size: var(--tamanho_texto);
+        text-align: center;
+        hyphens: auto;
+        max-width: 300px;
+    }
+}
+
+// Media Queries
+@media only screen and (max-width: 300px) {
+    
+}
+
+@media only screen and (min-width: 300px) {
+    
+}
+
+@media only screen and (min-width: 450px) {
+    footer{
+        --tamanho_texto: 20px;
+        --tamanho_h3: 27px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    footer{
+        --tamanho_texto: 20px;
+        --tamanho_h3: 30px;
+
+        .footer_redes{
+            --tamanho_icon: 50px;
+            margin: 20px;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 2560px) {
+    footer{
+        --tamanho_texto: 50px;
+        --tamanho_h3: 70px;
+
+        .footer_redes{
+            --tamanho_icon: 100px;
+            margin: 30px;
+        }
+
+        p{
+            max-width: 750px;
+        }
+    }
+
+
+}
